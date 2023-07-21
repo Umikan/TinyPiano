@@ -29,7 +29,7 @@ import Keyboard from './components/Keyboard.vue';
 }
 
 .bg { 
-  background-image: url(/john-moeses-bauan-Oj-G9GYlLr0-unsplash.jpg);
+  background-image: url('/john-moeses-bauan-Oj-G9GYlLr0-unsplash.jpg');
   background-size: cover;
   filter: blur(15px);
   opacity: 40%;
