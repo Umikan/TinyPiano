@@ -70,7 +70,7 @@ const onKeyUp = keyEvent(false)
 
 onMounted(() => {
   const context = new window.AudioContext()
-  fetchSound(context, '/Kawai-K5000W-MusicBox-C5.wav').then((data) => {
+  fetchSound(context, './Kawai-K5000W-MusicBox-C5.wav').then((data) => {
     createKeys(context, data)
   })
   window.addEventListener('keydown', onKeyDown)
