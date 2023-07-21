@@ -2,10 +2,10 @@
 import { toRefs, computed } from 'vue'
 
 const props = defineProps<{
-  pitch: number
   color: string
   visible: string
   isPressed: boolean
+  letter: string
 }>()
 
 const { isPressed } = toRefs(props)
@@ -17,6 +17,7 @@ const pressed = computed(() => {
 <template>
   <div :class="visible">
     <div :class="[color, pressed]"></div>
+    <div class="letter text-gray-400">{{ letter }}</div>
   </div>
 </template>
 
@@ -24,7 +25,7 @@ const pressed = computed(() => {
 @tailwind components;
 @layer components {
   .key {
-    @apply border-4 border-black box-border duration-100 bg-gradient-to-b;
+    @apply border-[5px] border-black box-border duration-100 bg-gradient-to-b rounded-md rounded-t-sm;
   }
 }
 
@@ -40,5 +41,13 @@ const pressed = computed(() => {
 
 .pressed {
   @apply brightness-200;
+}
+
+.letter {
+  position: relative;
+  top: -30px;
+  left: 40%;
+  margin-bottom: -24px;
+  z-index: 1;
 }
 </style>
